@@ -47,7 +47,6 @@ var View = function(selector)  {
 	 */
 	this.render = function (data) {
 
-
 		var eventsContainer = document.querySelector('.events');
 
 		// get data
