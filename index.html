@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playbill</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- https://developer.mozilla.org/en/docs/Web/HTML/Element/script -->
+  <!-- http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/ -->
+  <script defer src="js/common.js"></script>
+</head>
+<body>
+
+<h1>Today in Saint Petersburg</h1>
+
+<ul class="events">
+  <li class="events__item">
+    <div class="event-thumbnail">
+      <img src="events/id-src" alt="" class="event-thumbnail__image">
+      <div class="event-thumbnail__title">Event Title</div>
+      <div class="event-thumbnail__date">Event Date</div>
+      <a href="events/id" class="event-thumbnail__link">Event Link</a>
+    </div>
+  </li>
+</ul>
+
+
+<script id="events" type="text/template">
+Event list
+</script>
+
+<script id="event-thumbnail" type="text/template">
+  Event list item
+</script>
+
+<script id="event-card" type="text/template">
+Event card
+</script>
+
+
+</body>
+</html>
