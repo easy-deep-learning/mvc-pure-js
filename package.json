@@ -4,7 +4,8 @@
   "description": "Vanilla js training app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --browsers=Chrome --single-run",
+    "test:dev": "karma start --browsers=Chrome --auto-watch",
     "examples": "npm-run-all examples:deps examples:server",
     "examples:deps": "npm i local-web-server",
     "examples:server": "ws"
@@ -21,5 +22,15 @@
   "homepage": "https://github.com/easy-deep-learning/MVC-pure-js#readme",
   "dependencies": {
     "npm-run-all": "^1.5.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "karma": "^0.13.21",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.4",
+    "karma-mocha": "^0.2.2",
+    "karma-spec-reporter": "0.0.24",
+    "mocha": "^2.4.5"
   }
 }

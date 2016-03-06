@@ -17,3 +17,7 @@ It's the [local-web-server](https://github.com/75lb/local-web-server) package, s
 - [Dynamic Response from mock JSON file](https://github.com/75lb/local-web-server#dynamic-response)
 - [REST](https://github.com/75lb/local-web-server#restful-resource-example)
 - [HTTPS](https://github.com/75lb/local-web-server#https-server)
+
+
+# Run tests
+Debugging mode — run `npm run test:dev`. In the opened Chrome click the button 'Debug' and open console.
