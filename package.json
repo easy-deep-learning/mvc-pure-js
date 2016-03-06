@@ -1,0 +1,25 @@
+{
+  "name": "playbill",
+  "version": "1.0.0",
+  "description": "Vanilla js training app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "examples": "npm-run-all examples:deps examples:server",
+    "examples:deps": "npm i local-web-server",
+    "examples:server": "ws"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easy-deep-learning/MVC-pure-js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easy-deep-learning/MVC-pure-js/issues"
+  },
+  "homepage": "https://github.com/easy-deep-learning/MVC-pure-js#readme",
+  "dependencies": {
+    "npm-run-all": "^1.5.1"
+  }
+}
