@@ -17,26 +17,52 @@
 
 <h1>Today in Saint Petersburg</h1>
 
-<template id="template_events">
-  <ul class="events">
-    <li class="events__item">
-      <div class="event-thumbnail">
-        <img src="events/id-src" srcset="http://placehold.it/147x40" alt="" class="event-thumbnail__image">
-        <div class="event-thumbnail__title"></div>
-        <div class="event-thumbnail__date"></div>
-        <a href="events/id" class="event-thumbnail__link"></a>
-      </div>
-    </li>
-  </ul>
-</template>
+<ul class="events">
 
+</ul>
 
-<script id="events" type="text/template">
-Event list
+<script id="events-item" type="text/template">
+
+  <% for ( var i = 0; i < events.length; i++ ) { %>
+  <li id="<%=events[i].id%>" class="events__item">
+    <p class="event-thumbnail">
+
+      <span class="event-thumbnail__title"><%=events[i].title%></span>
+      <time class="event-thumbnail__date"><%=events[i].date%></time>
+      <a href="events/id" class="event-thumbnail__link"><%=events[i].link%></a>
+
+    </p>
+  </li>
+  <% } %>
+
 </script>
 
-<script id="event-thumbnail" type="text/template">
-  Event list item
+<script id="event-thumbnail">
+
+  (function(){
+
+    var dataObject = {
+      events:[
+        {
+          id:1,
+          title: "Зверополис",
+          date: "6 марта, воскресенье",
+          link: "Купить билет"
+        },
+        {
+          id:2,
+          title: "Да здравствует Цезарь!",
+          date: "7 марта, понедельник",
+          link: "Купить билет"
+        }
+      ]
+    };
+
+    var events = document.querySelector(".events");
+    events.innerHTML = template("events-item", dataObject);
+
+  });
+
 </script>
 
 <script id="event-card" type="text/template">
