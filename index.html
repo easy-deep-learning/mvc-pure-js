@@ -21,54 +21,20 @@
 
 </ul>
 
-<script id="events-item" type="text/template">
 
-  <% for ( var i = 0; i < events.length; i++ ) { %>
-  <li id="<%=events[i].id%>" class="events__item">
-    <p class="event-thumbnail">
-
-      <span class="event-thumbnail__title"><%=events[i].title%></span>
-      <time class="event-thumbnail__date"><%=events[i].date%></time>
-      <a href="events/id" class="event-thumbnail__link"><%=events[i].link%></a>
-
-    </p>
+<script id="template_events__item" type="text/template">
+  <!-- {id, url, title, date} -->
+  <% events.forEach(function(event) { %>
+  <li class="events__item">
+    <div class="event-thumbnail">
+      <img src="<%= event.src %>" alt="" class="event-thumbnail__image">
+      <div class="event-thumbnail__title"></div>
+      <div class="event-thumbnail__date"><%= event.date %></div>
+      <a href="events/<%= event.id %>" class="event-thumbnail__link"><%= event.link %></a>
+    </div>
   </li>
-  <% } %>
-
+  <% }); %>
 </script>
-
-<script id="event-thumbnail">
-
-  (function(){
-
-    var dataObject = {
-      events:[
-        {
-          id:1,
-          title: "Зверополис",
-          date: "6 марта, воскресенье",
-          link: "Купить билет"
-        },
-        {
-          id:2,
-          title: "Да здравствует Цезарь!",
-          date: "7 марта, понедельник",
-          link: "Купить билет"
-        }
-      ]
-    };
-
-    var events = document.querySelector(".events");
-    events.innerHTML = template("events-item", dataObject);
-
-  });
-
-</script>
-
-<script id="event-card" type="text/template">
-Event card
-</script>
-
 
 </body>
 </html>

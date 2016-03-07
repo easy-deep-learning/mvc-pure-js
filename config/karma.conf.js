@@ -3,14 +3,15 @@ var path = require('path');
 module.exports = function(config) {
   config.set({
 
-    basePath: 'tests',
+    basePath: '',
 
     // list of files to exclude
     exclude: [],
 
     // list of files / patterns to load in the browser
     files: [
-      '*.spec.js'
+      'js/**/*.js',
+      'tests/*.spec.js'
     ],
 
     // preprocess matching files before serving them to the browser
@@ -43,14 +44,14 @@ module.exports = function(config) {
 
     coverageReporter: {
 
-      dir: 'coverage',
+      dir: 'tests/coverage',
 
       reporters: [
         {type: 'text'},
         {
           type: 'lcovonly',
           subdir: '.',
-          file: 'report-lcovonly.txt'
+          file: 'tests/report-lcovonly.txt'
         }
       ]
     },

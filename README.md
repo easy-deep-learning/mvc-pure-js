@@ -6,7 +6,6 @@ Single page app without any frameworks
 2. run dev server: `npm run examples`
 3. open in browser: [127.0.0.1:8080](http://127.0.0.1:8080)
 
-
 ## Dev server
 It's the [local-web-server](https://github.com/75lb/local-web-server) package, so it supports:
 
