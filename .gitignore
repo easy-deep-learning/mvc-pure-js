@@ -1,6 +1,35 @@
-log
+# Numerous always-ignore extensions
+*.bak
+*.diff
+*.err
+*.exe
+*.log
+*.orig
+*.rej
+*.sass-cache
+*.swo
+*.swp
+*.vi
+*~
+
+# OS or Editor folders
+._*
+.cache
+.DS_Store
+.project
+.settings
+.tmproj
+Thumbs.db
+
+# Folders to ignore
+.CVS
+.git
+.hg
+.idea
+/.idea/*
+.svn
+bower_components
+
+# Node.JS
 node_modules
-
-coverage
-
 npm-debug.log
