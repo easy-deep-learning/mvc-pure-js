@@ -18,29 +18,23 @@
 <h1>Today in Saint Petersburg</h1>
 
 <ul class="events">
-  <li class="events__item">
-    <div class="event-thumbnail">
-      <img src="events/id-src" srcset="http://placehold.it/147x40" alt="" class="event-thumbnail__image">
-      <div class="event-thumbnail__title">Event Title</div>
-      <div class="event-thumbnail__date">Event Date</div>
-      <a href="events/id" class="event-thumbnail__link">Event Link</a>
-    </div>
-  </li>
+
 </ul>
 
 
-<template id="template_events">
-Event list
-</template>
-
-<template id="template_event-thumbnail">
-  Event list item
-</template>
-
-<template id="template_event-card">
-Event card
-</template>
-
+<script id="template_events__item" type="text/template">
+  <!-- {id, url, title, date} -->
+  <% events.forEach(function(event) { %>
+  <li class="events__item">
+    <div class="event-thumbnail">
+      <img src="<%= event.src %>" alt="" class="event-thumbnail__image">
+      <div class="event-thumbnail__title"></div>
+      <div class="event-thumbnail__date"><%= event.date %></div>
+      <a href="events/<%= event.id %>" class="event-thumbnail__link"><%= event.link %></a>
+    </div>
+  </li>
+  <% }); %>
+</script>
 
 </body>
 </html>
