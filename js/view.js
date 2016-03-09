@@ -11,8 +11,8 @@
    *
    *
    * @example
-   * var someUIComponent = new View('#template_some-ul-component');
-   * ulPlaceholder.innerHTML = someUIComponent.render({ name: 'my component', count: 2 });
+   * var someUIComponent = new View("#template_some-ul-component");
+   * ulPlaceholder.innerHTML = someUIComponent.render({ name: "my component", count: 2 });
    */
   var View = function(template) {
     this.templateSource = template;

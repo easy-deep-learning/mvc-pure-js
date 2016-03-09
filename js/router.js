@@ -14,4 +14,6 @@
   }
 
   console.log("Router constructor loaded into global.App.Router ");
+
 }(window));
+
