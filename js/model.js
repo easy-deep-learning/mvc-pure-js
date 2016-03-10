@@ -13,4 +13,5 @@
   }
 
   console.log("Model constructor loaded into global.App.Model ");
+
 }(window));
