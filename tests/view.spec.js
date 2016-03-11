@@ -35,20 +35,20 @@ describe('View', function() {
     expect(result).to.equal(reference);
   });
 
-/* TODO: починить тест
-https://travis-ci.org/easy-deep-learning/mvc-pure-js/builds/115273326
+  it('should set tempalte (with JS code)', function () {
 
-  it('should set tempalte (with JS code) ', function () {
+    testView = new View (
+      '<% dataItems.forEach(function(item) { %>' +
+        '<%= item.value %>' +
+      '<% }); %>'
+    );
 
-    testView = new View ('<div><% dataItems.forEach(function(item) { %> <%= item %> <%  }); %> <div>');
-
-    var testData = {dataItems: [{ item: 'testItem0'}, { item: 'testItem1'}]};
+    var testData = {dataItems: [{ value: 'testItem0'}, { value: 'testItem1'}]};
     var result = testView.render(testData);
-    var reference = '<div>testItem0<div><div>testItem1<div>';
+    var reference = 'testItem0testItem1';
 
     expect(result).to.equal(reference);
 
   });
-  */
 
 });
