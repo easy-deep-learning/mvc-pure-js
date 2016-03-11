@@ -6,7 +6,9 @@ module.exports = function(config) {
     basePath: '',
 
     // list of files to exclude
-    exclude: [],
+    exclude: [
+      'js/common.js'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
@@ -60,7 +62,7 @@ module.exports = function(config) {
     plugins: [
       'karma-mocha',
       'karma-chai',
-      'karma-chrome-launcher',
+      'karma-phantomjs2-launcher',
       'karma-coverage',
       'karma-spec-reporter'
     ],
@@ -74,7 +76,7 @@ module.exports = function(config) {
     // - PhantomJS
     // - PhantomJS2
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS2'],
 
     browserDisconnectTimeout: 10000,
 
@@ -110,16 +112,17 @@ module.exports = function(config) {
 
   // Travis conf part
   if (process.env.TRAVIS) {
-
     config.logLevel = config.LOG_DEBUG;
-
     // Karma (with socket.io 1.x) buffers by 50 and 50 tests can take a long time on IEs;-)
     config.browserNoActivityTimeout = 120000;
-
     // Debug logging into a file, that we print out at the end of the build.
     config.loggers.push({
       type: 'file',
       filename: 'logs/karma.log'
     });
+
+  } else {
+    config.plugins.push('karma-chrome-launcher');
+    config.browsers.push('Chrome');
   }
 };
