@@ -24,6 +24,7 @@ describe('View', function() {
     expect(typeof testView.template).to.equal('function');
   });
 
+
   it('should render simple template', function() {
     testView = new View('<div><%= name %></div>');
 
@@ -32,6 +33,19 @@ describe('View', function() {
     var reference = '<div>test</div>';
 
     expect(result).to.equal(reference);
+  });
+
+
+  it('should set tempalte (with JS code) ', function () {
+
+    testView = new View ('<div><% dataItems.forEach(function(item) { %> <%= item %> <%  }); %> <div>');
+
+    var testData = {dataItems: [{ item: 'testItem0'}, { item: 'testItem1'}]};
+    var result = testView.render(testData);
+    var reference = '<div>testItem0<div><div>testItem1<div>';
+
+    expect(result).to.equal(reference);
+
   });
 
 });
