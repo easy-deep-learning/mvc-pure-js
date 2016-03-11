@@ -1,4 +1,6 @@
-## Vanilla js only web app 
+[![Build Status](https://travis-ci.org/easy-deep-learning/mvc-pure-js.svg?branch=master)](https://travis-ci.org/easy-deep-learning/mvc-pure-js)
+
+## Vanilla js only web app
 Single page app without any frameworks
 
 ## How to run
