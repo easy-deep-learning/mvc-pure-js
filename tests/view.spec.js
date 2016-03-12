@@ -36,7 +36,6 @@ describe('View', function() {
   });
 
   it('should set tempalte (with JS code)', function () {
-
     testView = new View (
       '<% dataItems.forEach(function(item) { %>' +
         '<%= item.value %>' +
@@ -48,7 +47,17 @@ describe('View', function() {
     var reference = 'testItem0testItem1';
 
     expect(result).to.equal(reference);
+  });
 
+  it('should throw error with invalid template', function() {
+    testView = new View('<%= name'); // template is not closed
+
+    var testData = {name: 'test'};
+    var renderRunner = function() {
+      testView.render(testData);
+    };
+
+    expect(renderRunner).to.throw(Error);
   });
 
 });
