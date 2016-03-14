@@ -20,6 +20,8 @@
     this._init();
   };
 
+  View.prototype.error = new Error('Template source error');
+
   /**
    * Initialize template
    *
@@ -63,7 +65,16 @@
    * @return {String} HTML
    */
   View.prototype.render = function(data) {
-    return this.template(data);
+    var result;
+
+    try {
+      result = this.template(data);
+
+    } catch(error) {
+      throw this.error;
+    }
+
+    return result;
   };
 
   if (global) {

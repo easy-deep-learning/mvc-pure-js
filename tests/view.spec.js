@@ -53,11 +53,26 @@ describe('View', function() {
     testView = new View('<%= name'); // template is not closed
 
     var testData = {name: 'test'};
+    
     var renderRunner = function() {
       testView.render(testData);
     };
 
-    expect(renderRunner).to.throw(Error);
+    expect(renderRunner).to.throw(testView.error);
+  });
+
+  xit('should throw error with invalid data', function() {
+    testView = new View('<%= data.forEach(); %>'); // template is not closed
+
+    var testData = {data: undefined};
+
+    var renderRunner = function() {
+      testView.render(testData);
+    };
+
+    var res = renderRunner();
+
+    expect(testView.render(testData)).to.throw(Error);
   });
 
 });
