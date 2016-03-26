@@ -5,7 +5,29 @@
    *
    * @constructor
    */
-  var Model = function() {};
+  var Model = function() {
+    this.id = Date.now(); //
+  };
+
+  // TODO: develop
+  /**
+   *
+   * @param {String} name
+   */
+  Model.prototype.get = function(name) {
+
+  };
+
+  // TODO: develop
+  /**
+   *
+   * @param {String} name
+   * @param {*} value
+   */
+  Model.prototype.set = function(name, value) {
+    
+  };
+  
 
   if (global) {
     global.App = global.App || {};
