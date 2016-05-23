@@ -24,7 +24,9 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
       'mocha',
-      'chai'
+      'chai',
+      'sinon',
+      'sinon-chai'
     ],
 
     // test results reporter to use
@@ -62,6 +64,8 @@ module.exports = function(config) {
     plugins: [
       'karma-mocha',
       'karma-chai',
+      'karma-sinon',
+      'karma-sinon-chai',
       'karma-phantomjs2-launcher',
       'karma-coverage',
       'karma-spec-reporter'
