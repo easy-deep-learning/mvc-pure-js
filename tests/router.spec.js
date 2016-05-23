@@ -1,5 +1,6 @@
 // http://mochajs.org/
 // @see http://chaijs.com/api/bdd/
+// @see https://github.com/domenic/sinon-chai
 describe('Router', function() {
   var App;
   var Router;
@@ -24,6 +25,6 @@ describe('Router', function() {
     testRouter.all('/', spyHandler);
     testRouter.route('/');
 
-    expect(spyHandler.called).to.be.true;
+    expect(spyHandler).to.have.been.calledOnce;
   });
 });

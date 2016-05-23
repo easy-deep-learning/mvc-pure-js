@@ -25,7 +25,8 @@ module.exports = function(config) {
     frameworks: [
       'mocha',
       'chai',
-      'sinon'
+      'sinon',
+      'sinon-chai'
     ],
 
     // test results reporter to use
@@ -64,6 +65,7 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-chai',
       'karma-sinon',
+      'karma-sinon-chai',
       'karma-phantomjs2-launcher',
       'karma-coverage',
       'karma-spec-reporter'
