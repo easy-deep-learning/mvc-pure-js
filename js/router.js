@@ -8,6 +8,20 @@
    */
   var Router = function() {
     this.routes = {};
+    this._init();
+  };
+  
+  /**
+   * Initialize tracking URL changes
+   * 
+   * @private 
+   */
+  Router.prototype._init = function() {
+  
+    window.addEventListener('hashchange', function () {
+      
+    });
+    
   };
 
   /**
