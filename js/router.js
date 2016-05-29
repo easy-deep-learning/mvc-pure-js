@@ -16,17 +16,16 @@
    * @private 
    */
   Router.prototype._init = function() {
+    var that = this;
     window.addEventListener('popstate', function(e) {
-      this.route(getUrlFromEvent(e))
+      that.route(getUrlFromEvent(e))
     });
   
     /**
-     * 
      * @param {Event} hash change 
      * @returns {string} url
      */
     function getUrlFromEvent(e) {
-      //var url = location.pathname
       var url = location.hash.slice(1) || '/';
       return url
     }
