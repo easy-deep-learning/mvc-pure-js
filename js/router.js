@@ -13,15 +13,23 @@
   
   /**
    * Initialize tracking URL changes
-   * 
    * @private 
    */
   Router.prototype._init = function() {
-  
-    window.addEventListener('hashchange', function () {
-      
+    window.addEventListener('popstate', function(e) {
+      this.route(getUrlFromEvent(e))
     });
-    
+  
+    /**
+     * 
+     * @param {Event} hash change 
+     * @returns {string} url
+     */
+    function getUrlFromEvent(e) {
+      //var url = location.pathname
+      var url = location.hash.slice(1) || '/';
+      return url
+    }
   };
 
   /**
