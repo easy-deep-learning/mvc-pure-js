@@ -27,4 +27,15 @@ describe('Router', function() {
 
     expect(spyHandler).to.have.been.calledOnce;
   });
+  
+  it('should call event on popstate', function () {
+    testRouter = new Router();
+    var spyHandler = sinon.spy();
+  
+    testRouter.all('/', spyHandler);
+    testRouter.route('/');
+    testRouter._init();
+  
+    expect(spyHandler).to(_init.called).to.equal(true);
+  })
 });
