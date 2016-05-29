@@ -28,14 +28,19 @@ describe('Router', function() {
     expect(spyHandler).to.have.been.calledOnce;
   });
   
-  it('should call event on popstate', function () {
+  it('should call controller (url)', function () {
+    var spyRootHandler = sinon.spy();
+    var spyAboutHandler  = sinon.spy();
+  
     testRouter = new Router();
-    var spyHandler = sinon.spy();
   
-    testRouter.all('/', spyHandler);
-    testRouter.route('/');
-    testRouter._init();
+    testRouter.all('/page1/', spyRootHandler);
+    testRouter.all('/page2/', spyAboutHandler);
   
-    expect(spyHandler).to(_init.called).to.equal(true);
+    testRouter.route('/page1/');
+    expect(spyRootHandler).to.be.calledOnce;
+  
+    testRouter.route('/page2/');
+    expect(spyAboutHandler).to.be.calledOnce;
   })
 });
