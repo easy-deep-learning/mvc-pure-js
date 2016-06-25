@@ -8,7 +8,7 @@
 
   var eventsRoute = new App.Router();
 
-  eventsRoute.all('/events', function () {
+  eventsRoute.all("/events", function () {
     var eventsUI = new App.View(templateEventsItemNode.innerHTML);
     var eventsModel = new App.Model('events');
 
