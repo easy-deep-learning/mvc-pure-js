@@ -8,6 +8,27 @@
    */
   var Router = function() {
     this.routes = {};
+    this._init();
+  };
+  
+  /**
+   * Initialize tracking URL changes
+   * @private 
+   */
+  Router.prototype._init = function() {
+    var that = this;
+    window.addEventListener('popstate', function(e) {
+      that.route(getUrlFromEvent(e))
+    });
+  
+    /**
+     * @param {Event} hash change 
+     * @returns {string} url
+     */
+    function getUrlFromEvent(e) {
+      var url = location.hash.slice(1) || '/';
+      return url
+    }
   };
 
   /**

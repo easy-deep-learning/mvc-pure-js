@@ -24,10 +24,14 @@
   };
 
   var templateEventsItemNode = doc.getElementById("template_events__item");
-
-  var eventsUI = new App.View(templateEventsItemNode.innerHTML);
-  var eventsHTML = eventsUI.render(dataStub);
-
-  doc.querySelector(".events").innerHTML = eventsHTML;
+  
+  var eventsRoute = new App.Router('/page1', 'template_events__item', function () {
+  
+    var eventsUI = new App.View(templateEventsItemNode.innerHTML);
+    var eventsHTML = eventsUI.render(dataStub);
+  
+    doc.querySelector(".events").innerHTML = eventsHTML;
+  
+  });
 
 }(window));
