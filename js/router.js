@@ -10,22 +10,23 @@
     this.routes = {};
     this._init();
   };
-  
+
+
   /**
    * Initialize tracking URL changes
-   * @private 
+   * @private
    */
   Router.prototype._init = function() {
     var that = this;
     window.addEventListener('popstate', function(e) {
       that.route(getUrlFromEvent(e))
     });
-  
+
     /**
-     * @param {Event} hash change 
+     * @param {Event} event change
      * @returns {string} url
      */
-    function getUrlFromEvent(e) {
+    function getUrlFromEvent(event) {
       var url = location.hash.slice(1) || '/';
       return url
     }
